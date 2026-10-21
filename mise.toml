@@ -1,0 +1,31 @@
+min_version = "2024.9.0"
+
+[tools]
+bun = "1.4.3"
+node = "24"
+
+[tasks.deps]
+run = "bun install"
+
+[tasks.dev]
+run = "bun run dev"
+
+[tasks.build]
+run = "bun run build"
+alias = "b"
+
+[tasks.preview]
+run = "bun run preview"
+
+[tasks.check]
+run = "bun run check"
+
+[tasks.test]
+run = "bun test"
+alias = "t"
+
+[tasks.convert]
+run = "bun tools/convert-data.ts"
+
+[tasks.ci]
+depends = ["check", "test", "build"]
